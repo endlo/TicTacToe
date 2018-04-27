@@ -46,11 +46,6 @@ public class GameBoard {
     // TODO
     public boolean isGameOver() {
 
-        // Check if the board is completely full
-        if (isBoardCompletelyFull()) {
-            return true;
-        }
-
         // Check horizontal wins
         for (int i = 0; i < boardState.length; i++) {
             if (isWinningLine(boardState[i][0],
@@ -81,6 +76,11 @@ public class GameBoard {
             return true;
         }
 
+        // Check if the board is completely full
+        if (isBoardCompletelyFull()) {
+            return true;
+        }
+        
         return false;
     }
 
